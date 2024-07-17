@@ -1,0 +1,33 @@
+[1]: 1 SYN no ACK, new connection, outer VLAN 0 (ip.addr == 192.168.56.1 && ip.addr == 192.168.56.101 && tcp.port == 58427 && tcp.port == 3000)
+[2]: 1 SYN + ACK, new connection, outer VLAN 0 (ip.addr == 192.168.56.101 && ip.addr == 192.168.56.1 && tcp.port == 3000 && tcp.port == 58427)
+[1]: 2 tcp_segment_size 82 
+[1]: 2 >>> http: request GET /
+[1]: 2 >>> http: request headers 82 bytes [("Host", "192.168.56.101:3000"), ("User-Agent", "curl/8.7.1"), ("Accept", "*/*")]
+[1]: 2 >>> http: request complete, no body, reset http message
+[1]: 2 consumed 82 bytes
+[2]: 2 tcp_segment_size 1460 
+[2]: 2 >>> http: response 200 OK
+[2]: 2 >>> http: response headers 312 bytes [("Content-Length", "6741"), ("Content-Disposition", "inline; filename=\"index.html\""), ("Accept-Ranges", "bytes"), ("ETag", "\"51aae6d2058b8b6e8ad28760484f147708f77d8d\""), ("Content-Type", "text/html; charset=utf-8"), ("Vary", "Accept-Encoding"), ("Date", "Sun, 14 Jul 2024 20:01:38 GMT"), ("Connection", "keep-alive"), ("Keep-Alive", "timeout=5")]
+[2]: 2 >>> http: response body consumed 1148 bytes
+[2]: 2 consumed 1460 bytes
+[2]: 1462 tcp_segment_size 1460 
+[2]: 1462 >>> http: response body consumed 1460 bytes
+[2]: 1462 consumed 1460 bytes
+[2]: 2922 tcp_segment_size 1460 
+[2]: 2922 >>> http: response body consumed 1460 bytes
+[2]: 2922 consumed 1460 bytes
+[2]: 4382 tcp_segment_size 1460 
+[2]: 4382 >>> http: response body consumed 1460 bytes
+[2]: 4382 consumed 1460 bytes
+[2]: 5842 tcp_segment_size 1213 
+[2]: 5842 >>> http: response body complete 6741 bytes, reset http message 
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" cont
+
+[2]: 5842 consumed 1213 bytes
+[1]: 84 RST or FIN, remove connection
+[1]: 84 RST or FIN, remove reverse connection [2]: 7054
