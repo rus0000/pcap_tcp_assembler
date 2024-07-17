@@ -1,0 +1,20 @@
+[package]
+name = "pcap_tcp_assembler"
+authors = ["Ruslan Iusupov <https://github.com/rus0000>"]
+version = "1.0.0"
+license = "MIT"
+edition = "2021"
+keywords = ["tcp", "pcap", "pcapng", "http"]
+repository = "https://github.com/rus0000/pcap_tcp_assembler"
+categories = ["network-programming"]
+readme = "README.md"
+exclude = [".*", "rustfmt.toml"]
+
+[dependencies]
+etherparse = "0.13.0"
+indexmap = "2.2.6"
+
+[dev-dependencies]
+httparse = "1.9.4"
+rand = "0.8.5"
+rpcap = "1.0.0"

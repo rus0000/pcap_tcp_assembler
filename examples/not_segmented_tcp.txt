@@ -1,0 +1,21 @@
+[1]: 1 SYN no ACK, new connection, outer VLAN 0 (ip.addr == 192.168.56.1 && ip.addr == 192.168.56.101 && tcp.port == 57487 && tcp.port == 3000)
+[2]: 1 SYN + ACK, new connection, outer VLAN 0 (ip.addr == 192.168.56.101 && ip.addr == 192.168.56.1 && tcp.port == 3000 && tcp.port == 57487)
+[1]: 2 tcp_segment_size 82 
+[1]: 2 >>> http: request GET /
+[1]: 2 >>> http: request headers 82 bytes [("Host", "192.168.56.101:3000"), ("User-Agent", "curl/8.7.1"), ("Accept", "*/*")]
+[1]: 2 >>> http: request complete, no body, reset http message
+[1]: 2 consumed 82 bytes
+[2]: 2 tcp_segment_size 550 
+[2]: 2 >>> http: response 200 OK
+[2]: 2 >>> http: response headers 311 bytes [("Content-Length", "239"), ("Content-Disposition", "inline; filename=\"index.html\""), ("Accept-Ranges", "bytes"), ("ETag", "\"cca63d6f048355edd59e6c963465ce32b3e919e7\""), ("Content-Type", "text/html; charset=utf-8"), ("Vary", "Accept-Encoding"), ("Date", "Sun, 14 Jul 2024 13:29:53 GMT"), ("Connection", "keep-alive"), ("Keep-Alive", "timeout=5")]
+[2]: 2 >>> http: response body complete 239 bytes, reset http message 
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" cont
+
+[2]: 2 consumed 550 bytes
+[1]: 84 RST or FIN, remove connection
+[1]: 84 RST or FIN, remove reverse connection [2]: 551
