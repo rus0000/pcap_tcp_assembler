@@ -1,0 +1,75 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Unit test",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--lib",
+                    "--package=pcap_tcp_assembler"
+                ],
+                "filter": {
+                    "name": "pcap_tcp_assembler",
+                    "kind": "lib"
+                }
+            },
+            "args": ["test_pcap_tcp_assembler_handle_chunked_messages"],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Integration test",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--test=integration_test",
+                    "--package=pcap_tcp_assembler"
+                ],
+                "filter": {
+                    "name": "integration_test",
+                    "kind": "test"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "extract_http",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=extract_http",
+                    "--package=pcap_tcp_assembler"
+                ],
+                "filter": {
+                    "name": "extract_http",
+                    "kind": "example"
+                }
+            },
+            "args": ["examples/segmented_tcp2.pcap "],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "(Windows) Launch",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceRoot}/target/debug/examples/extract_http.exe",
+            "args": ["examples/segmented_tcp2.pcap"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceRoot}",
+            "environment": [],
+            "externalConsole": true
+        },
+    ]
+}

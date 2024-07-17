@@ -1,0 +1,650 @@
+[1]: 1 SYN no ACK, new connection, outer VLAN 0 (ip.addr == 192.168.56.1 && ip.addr == 192.168.56.101 && tcp.port == 55242 && tcp.port == 3000)
+[2]: 1 SYN + ACK, new connection, outer VLAN 0 (ip.addr == 192.168.56.101 && ip.addr == 192.168.56.1 && tcp.port == 3000 && tcp.port == 55242)
+[1]: 2 tcp_segment_size 459 
+[1]: 2 >>> http: request GET /
+[1]: 2 >>> http: request headers 459 bytes [("Host", "192.168.56.101:3000"), ("Connection", "keep-alive"), ("Pragma", "no-cache"), ("Cache-Control", "no-cache"), ("Upgrade-Insecure-Requests", "1"), ("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"), ("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8"), ("Sec-GPC", "1"), ("Accept-Encoding", "gzip, deflate"), ("Accept-Language", "en-US,en;q=0.9,de;q=0.8")]
+[1]: 2 >>> http: request complete, no body, reset http message
+[1]: 2 consumed 459 bytes
+[2]: 2 tcp_segment_size 1460 
+[2]: 2 >>> http: response 200 OK
+[2]: 2 >>> http: response headers 289 bytes [("Content-Length", "6880"), ("Content-Disposition", "inline; filename=\"index.html\""), ("Accept-Ranges", "bytes"), ("ETag", "\"68442675d726a19ca9fc8d1bd7e1446e6e13e033\""), ("Content-Type", "text/html; charset=utf-8"), ("Date", "Mon, 15 Jul 2024 13:41:06 GMT"), ("Connection", "keep-alive"), ("Keep-Alive", "timeout=5")]
+[2]: 2 >>> http: response body consumed 1171 bytes
+[2]: 2 consumed 1460 bytes
+[2]: 1462 tcp_segment_size 1460 
+[2]: 1462 >>> http: response body consumed 1460 bytes
+[2]: 1462 consumed 1460 bytes
+[2]: 2922 tcp_segment_size 1460 
+[2]: 2922 >>> http: response body consumed 1460 bytes
+[2]: 2922 consumed 1460 bytes
+[2]: 4382 tcp_segment_size 1460 
+[2]: 4382 >>> http: response body consumed 1460 bytes
+[2]: 4382 consumed 1460 bytes
+[2]: 5842 tcp_segment_size 1329 
+[2]: 5842 >>> http: response body complete 6880 bytes, reset http message 
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" cont
+
+[2]: 5842 consumed 1329 bytes
+[3]: 1 SYN no ACK, new connection, outer VLAN 0 (ip.addr == 192.168.56.1 && ip.addr == 192.168.56.101 && tcp.port == 55243 && tcp.port == 3000)
+[5]: 1 SYN no ACK, new connection, outer VLAN 0 (ip.addr == 192.168.56.1 && ip.addr == 192.168.56.101 && tcp.port == 55244 && tcp.port == 3000)
+[4]: 1 SYN + ACK, new connection, outer VLAN 0 (ip.addr == 192.168.56.101 && ip.addr == 192.168.56.1 && tcp.port == 3000 && tcp.port == 55243)
+[6]: 1 SYN + ACK, new connection, outer VLAN 0 (ip.addr == 192.168.56.101 && ip.addr == 192.168.56.1 && tcp.port == 3000 && tcp.port == 55244)
+[1]: 461 tcp_segment_size 397 
+[1]: 461 >>> http: request GET /main.css
+[1]: 461 >>> http: request headers 397 bytes [("Host", "192.168.56.101:3000"), ("Connection", "keep-alive"), ("Pragma", "no-cache"), ("Cache-Control", "no-cache"), ("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"), ("Accept", "text/css,*/*;q=0.1"), ("Sec-GPC", "1"), ("Referer", "http://192.168.56.101:3000/"), ("Accept-Encoding", "gzip, deflate"), ("Accept-Language", "en-US,en;q=0.9,de;q=0.8")]
+[1]: 461 >>> http: request complete, no body, reset http message
+[1]: 461 consumed 397 bytes
+[3]: 2 tcp_segment_size 443 
+[3]: 2 >>> http: request GET /img1.jpg
+[3]: 2 >>> http: request headers 443 bytes [("Host", "192.168.56.101:3000"), ("Connection", "keep-alive"), ("Pragma", "no-cache"), ("Cache-Control", "no-cache"), ("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"), ("Accept", "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8"), ("Sec-GPC", "1"), ("Referer", "http://192.168.56.101:3000/"), ("Accept-Encoding", "gzip, deflate"), ("Accept-Language", "en-US,en;q=0.9,de;q=0.8")]
+[3]: 2 >>> http: request complete, no body, reset http message
+[3]: 2 consumed 443 bytes
+[5]: 2 tcp_segment_size 443 
+[5]: 2 >>> http: request GET /img2.png
+[5]: 2 >>> http: request headers 443 bytes [("Host", "192.168.56.101:3000"), ("Connection", "keep-alive"), ("Pragma", "no-cache"), ("Cache-Control", "no-cache"), ("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"), ("Accept", "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8"), ("Sec-GPC", "1"), ("Referer", "http://192.168.56.101:3000/"), ("Accept-Encoding", "gzip, deflate"), ("Accept-Language", "en-US,en;q=0.9,de;q=0.8")]
+[5]: 2 >>> http: request complete, no body, reset http message
+[5]: 2 consumed 443 bytes
+[2]: 7171 tcp_segment_size 1460 
+[2]: 7171 >>> http: response 200 OK
+[2]: 7171 >>> http: response headers 287 bytes [("Content-Length", "85684"), ("Content-Disposition", "inline; filename=\"main.css\""), ("Accept-Ranges", "bytes"), ("ETag", "\"cb6073d79e2c946a456be4c69d410db57eea50e2\""), ("Content-Type", "text/css; charset=utf-8"), ("Date", "Mon, 15 Jul 2024 13:41:06 GMT"), ("Connection", "keep-alive"), ("Keep-Alive", "timeout=5")]
+[2]: 7171 >>> http: response body consumed 1173 bytes
+[2]: 7171 consumed 1460 bytes
+[2]: 8631 tcp_segment_size 1460 
+[2]: 8631 >>> http: response body consumed 1460 bytes
+[2]: 8631 consumed 1460 bytes
+[2]: 10091 tcp_segment_size 1460 
+[2]: 10091 >>> http: response body consumed 1460 bytes
+[2]: 10091 consumed 1460 bytes
+[2]: 11551 tcp_segment_size 1460 
+[2]: 11551 >>> http: response body consumed 1460 bytes
+[2]: 11551 consumed 1460 bytes
+[2]: 13011 tcp_segment_size 1460 
+[2]: 13011 >>> http: response body consumed 1460 bytes
+[2]: 13011 consumed 1460 bytes
+[2]: 14471 tcp_segment_size 1460 
+[2]: 14471 >>> http: response body consumed 1460 bytes
+[2]: 14471 consumed 1460 bytes
+[2]: 15931 tcp_segment_size 1460 
+[2]: 15931 >>> http: response body consumed 1460 bytes
+[2]: 15931 consumed 1460 bytes
+[2]: 17391 tcp_segment_size 1460 
+[2]: 17391 >>> http: response body consumed 1460 bytes
+[2]: 17391 consumed 1460 bytes
+[2]: 18851 tcp_segment_size 1460 
+[2]: 18851 >>> http: response body consumed 1460 bytes
+[2]: 18851 consumed 1460 bytes
+[2]: 20311 tcp_segment_size 1460 
+[2]: 20311 >>> http: response body consumed 1460 bytes
+[2]: 20311 consumed 1460 bytes
+[4]: 2 tcp_segment_size 1460 
+[4]: 2 >>> http: response 200 OK
+[4]: 2 >>> http: response headers 274 bytes [("Content-Length", "20595"), ("Content-Disposition", "inline; filename=\"img1.jpg\""), ("Accept-Ranges", "bytes"), ("ETag", "\"c74d0f92a67fac1937b9075431745da69ce0e470\""), ("Content-Type", "image/jpeg"), ("Date", "Mon, 15 Jul 2024 13:41:06 GMT"), ("Connection", "keep-alive"), ("Keep-Alive", "timeout=5")]
+[4]: 2 >>> http: response body consumed 1186 bytes
+[4]: 2 consumed 1460 bytes
+[4]: 1462 tcp_segment_size 1460 
+[4]: 1462 >>> http: response body consumed 1460 bytes
+[4]: 1462 consumed 1460 bytes
+[4]: 2922 tcp_segment_size 1460 
+[4]: 2922 >>> http: response body consumed 1460 bytes
+[4]: 2922 consumed 1460 bytes
+[4]: 4382 tcp_segment_size 1460 
+[4]: 4382 >>> http: response body consumed 1460 bytes
+[4]: 4382 consumed 1460 bytes
+[4]: 5842 tcp_segment_size 1460 
+[4]: 5842 >>> http: response body consumed 1460 bytes
+[4]: 5842 consumed 1460 bytes
+[4]: 7302 tcp_segment_size 1460 
+[4]: 7302 >>> http: response body consumed 1460 bytes
+[4]: 7302 consumed 1460 bytes
+[4]: 8762 tcp_segment_size 1460 
+[4]: 8762 >>> http: response body consumed 1460 bytes
+[4]: 8762 consumed 1460 bytes
+[4]: 10222 tcp_segment_size 1460 
+[4]: 10222 >>> http: response body consumed 1460 bytes
+[4]: 10222 consumed 1460 bytes
+[4]: 11682 tcp_segment_size 1460 
+[4]: 11682 >>> http: response body consumed 1460 bytes
+[4]: 11682 consumed 1460 bytes
+[4]: 13142 tcp_segment_size 1460 
+[4]: 13142 >>> http: response body consumed 1460 bytes
+[4]: 13142 consumed 1460 bytes
+[6]: 2 tcp_segment_size 1460 
+[6]: 2 >>> http: response 200 OK
+[6]: 2 >>> http: response headers 274 bytes [("Content-Length", "115990"), ("Content-Disposition", "inline; filename=\"img2.png\""), ("Accept-Ranges", "bytes"), ("ETag", "\"53d05a55c457aa819b3f40e664f96ce1cfc92be8\""), ("Content-Type", "image/png"), ("Date", "Mon, 15 Jul 2024 13:41:06 GMT"), ("Connection", "keep-alive"), ("Keep-Alive", "timeout=5")]
+[6]: 2 >>> http: response body consumed 1186 bytes
+[6]: 2 consumed 1460 bytes
+[6]: 1462 tcp_segment_size 1460 
+[6]: 1462 >>> http: response body consumed 1460 bytes
+[6]: 1462 consumed 1460 bytes
+[6]: 2922 tcp_segment_size 1460 
+[6]: 2922 >>> http: response body consumed 1460 bytes
+[6]: 2922 consumed 1460 bytes
+[6]: 4382 tcp_segment_size 1460 
+[6]: 4382 >>> http: response body consumed 1460 bytes
+[6]: 4382 consumed 1460 bytes
+[6]: 5842 tcp_segment_size 1460 
+[6]: 5842 >>> http: response body consumed 1460 bytes
+[6]: 5842 consumed 1460 bytes
+[6]: 7302 tcp_segment_size 1460 
+[6]: 7302 >>> http: response body consumed 1460 bytes
+[6]: 7302 consumed 1460 bytes
+[6]: 8762 tcp_segment_size 1460 
+[6]: 8762 >>> http: response body consumed 1460 bytes
+[6]: 8762 consumed 1460 bytes
+[6]: 10222 tcp_segment_size 1460 
+[6]: 10222 >>> http: response body consumed 1460 bytes
+[6]: 10222 consumed 1460 bytes
+[6]: 11682 tcp_segment_size 1460 
+[6]: 11682 >>> http: response body consumed 1460 bytes
+[6]: 11682 consumed 1460 bytes
+[6]: 13142 tcp_segment_size 1460 
+[6]: 13142 >>> http: response body consumed 1460 bytes
+[6]: 13142 consumed 1460 bytes
+[2]: 21771 tcp_segment_size 1460 
+[2]: 21771 >>> http: response body consumed 1460 bytes
+[2]: 21771 consumed 1460 bytes
+[2]: 23231 tcp_segment_size 1460 
+[2]: 23231 >>> http: response body consumed 1460 bytes
+[2]: 23231 consumed 1460 bytes
+[2]: 24691 tcp_segment_size 1460 
+[2]: 24691 >>> http: response body consumed 1460 bytes
+[2]: 24691 consumed 1460 bytes
+[2]: 26151 tcp_segment_size 1460 
+[2]: 26151 >>> http: response body consumed 1460 bytes
+[2]: 26151 consumed 1460 bytes
+[2]: 27611 tcp_segment_size 1460 
+[2]: 27611 >>> http: response body consumed 1460 bytes
+[2]: 27611 consumed 1460 bytes
+[2]: 29071 tcp_segment_size 1460 
+[2]: 29071 >>> http: response body consumed 1460 bytes
+[2]: 29071 consumed 1460 bytes
+[2]: 30531 tcp_segment_size 1460 
+[2]: 30531 >>> http: response body consumed 1460 bytes
+[2]: 30531 consumed 1460 bytes
+[2]: 31991 tcp_segment_size 1460 
+[2]: 31991 >>> http: response body consumed 1460 bytes
+[2]: 31991 consumed 1460 bytes
+[2]: 33451 tcp_segment_size 1460 
+[2]: 33451 >>> http: response body consumed 1460 bytes
+[2]: 33451 consumed 1460 bytes
+[2]: 34911 tcp_segment_size 1460 
+[2]: 34911 >>> http: response body consumed 1460 bytes
+[2]: 34911 consumed 1460 bytes
+[2]: 36371 tcp_segment_size 1460 
+[2]: 36371 >>> http: response body consumed 1460 bytes
+[2]: 36371 consumed 1460 bytes
+[2]: 37831 tcp_segment_size 1460 
+[2]: 37831 >>> http: response body consumed 1460 bytes
+[2]: 37831 consumed 1460 bytes
+[2]: 39291 tcp_segment_size 1460 
+[2]: 39291 >>> http: response body consumed 1460 bytes
+[2]: 39291 consumed 1460 bytes
+[2]: 40751 tcp_segment_size 1460 
+[2]: 40751 >>> http: response body consumed 1460 bytes
+[2]: 40751 consumed 1460 bytes
+[2]: 42211 tcp_segment_size 1460 
+[2]: 42211 >>> http: response body consumed 1460 bytes
+[2]: 42211 consumed 1460 bytes
+[2]: 43671 tcp_segment_size 1460 
+[2]: 43671 >>> http: response body consumed 1460 bytes
+[2]: 43671 consumed 1460 bytes
+[2]: 45131 tcp_segment_size 1460 
+[2]: 45131 >>> http: response body consumed 1460 bytes
+[2]: 45131 consumed 1460 bytes
+[2]: 46591 tcp_segment_size 1460 
+[2]: 46591 >>> http: response body consumed 1460 bytes
+[2]: 46591 consumed 1460 bytes
+[2]: 48051 tcp_segment_size 1460 
+[2]: 48051 >>> http: response body consumed 1460 bytes
+[2]: 48051 consumed 1460 bytes
+[2]: 49511 tcp_segment_size 1460 
+[2]: 49511 >>> http: response body consumed 1460 bytes
+[2]: 49511 consumed 1460 bytes
+[4]: 14602 tcp_segment_size 1460 
+[4]: 14602 >>> http: response body consumed 1460 bytes
+[4]: 14602 consumed 1460 bytes
+[4]: 16062 tcp_segment_size 1460 
+[4]: 16062 >>> http: response body consumed 1460 bytes
+[4]: 16062 consumed 1460 bytes
+[4]: 17522 tcp_segment_size 1460 
+[4]: 17522 >>> http: response body consumed 1460 bytes
+[4]: 17522 consumed 1460 bytes
+[4]: 18982 tcp_segment_size 1460 
+[4]: 18982 >>> http: response body consumed 1460 bytes
+[4]: 18982 consumed 1460 bytes
+[4]: 20442 tcp_segment_size 429 
+[4]: 20442 >>> http: response body complete 20595 bytes, reset http message 
+[FF, D8, FF, E0, 0, 10, 4A, 46, 49, 46, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, FF, FE, 0, 1F, 43, 6F, 6D, 70,
+
+[4]: 20442 consumed 429 bytes
+[6]: 14602 tcp_segment_size 1460 
+[6]: 14602 >>> http: response body consumed 1460 bytes
+[6]: 14602 consumed 1460 bytes
+[6]: 16062 tcp_segment_size 1460 
+[6]: 16062 >>> http: response body consumed 1460 bytes
+[6]: 16062 consumed 1460 bytes
+[6]: 17522 tcp_segment_size 1460 
+[6]: 17522 >>> http: response body consumed 1460 bytes
+[6]: 17522 consumed 1460 bytes
+[6]: 18982 tcp_segment_size 1460 
+[6]: 18982 >>> http: response body consumed 1460 bytes
+[6]: 18982 consumed 1460 bytes
+[6]: 20442 tcp_segment_size 1460 
+[6]: 20442 >>> http: response body consumed 1460 bytes
+[6]: 20442 consumed 1460 bytes
+[6]: 21902 tcp_segment_size 1460 
+[6]: 21902 >>> http: response body consumed 1460 bytes
+[6]: 21902 consumed 1460 bytes
+[6]: 23362 tcp_segment_size 1460 
+[6]: 23362 >>> http: response body consumed 1460 bytes
+[6]: 23362 consumed 1460 bytes
+[6]: 24822 tcp_segment_size 1460 
+[6]: 24822 >>> http: response body consumed 1460 bytes
+[6]: 24822 consumed 1460 bytes
+[6]: 26282 tcp_segment_size 1460 
+[6]: 26282 >>> http: response body consumed 1460 bytes
+[6]: 26282 consumed 1460 bytes
+[6]: 27742 tcp_segment_size 1460 
+[6]: 27742 >>> http: response body consumed 1460 bytes
+[6]: 27742 consumed 1460 bytes
+[6]: 29202 tcp_segment_size 1460 
+[6]: 29202 >>> http: response body consumed 1460 bytes
+[6]: 29202 consumed 1460 bytes
+[6]: 30662 tcp_segment_size 1460 
+[6]: 30662 >>> http: response body consumed 1460 bytes
+[6]: 30662 consumed 1460 bytes
+[6]: 32122 tcp_segment_size 1460 
+[6]: 32122 >>> http: response body consumed 1460 bytes
+[6]: 32122 consumed 1460 bytes
+[6]: 33582 tcp_segment_size 1460 
+[6]: 33582 >>> http: response body consumed 1460 bytes
+[6]: 33582 consumed 1460 bytes
+[6]: 35042 tcp_segment_size 1460 
+[6]: 35042 >>> http: response body consumed 1460 bytes
+[6]: 35042 consumed 1460 bytes
+[6]: 36502 tcp_segment_size 1460 
+[6]: 36502 >>> http: response body consumed 1460 bytes
+[6]: 36502 consumed 1460 bytes
+[6]: 37962 tcp_segment_size 1460 
+[6]: 37962 >>> http: response body consumed 1460 bytes
+[6]: 37962 consumed 1460 bytes
+[6]: 39422 tcp_segment_size 1460 
+[6]: 39422 >>> http: response body consumed 1460 bytes
+[6]: 39422 consumed 1460 bytes
+[6]: 40882 tcp_segment_size 1460 
+[6]: 40882 >>> http: response body consumed 1460 bytes
+[6]: 40882 consumed 1460 bytes
+[6]: 42342 tcp_segment_size 1460 
+[6]: 42342 >>> http: response body consumed 1460 bytes
+[6]: 42342 consumed 1460 bytes
+[2]: 50971 tcp_segment_size 1460 
+[2]: 50971 >>> http: response body consumed 1460 bytes
+[2]: 50971 consumed 1460 bytes
+[2]: 52431 tcp_segment_size 1460 
+[2]: 52431 >>> http: response body consumed 1460 bytes
+[2]: 52431 consumed 1460 bytes
+[2]: 53891 tcp_segment_size 1460 
+[2]: 53891 >>> http: response body consumed 1460 bytes
+[2]: 53891 consumed 1460 bytes
+[2]: 55351 tcp_segment_size 1460 
+[2]: 55351 >>> http: response body consumed 1460 bytes
+[2]: 55351 consumed 1460 bytes
+[2]: 56811 tcp_segment_size 1460 
+[2]: 56811 >>> http: response body consumed 1460 bytes
+[2]: 56811 consumed 1460 bytes
+[2]: 58271 tcp_segment_size 1460 
+[2]: 58271 >>> http: response body consumed 1460 bytes
+[2]: 58271 consumed 1460 bytes
+[2]: 59731 tcp_segment_size 1460 
+[2]: 59731 >>> http: response body consumed 1460 bytes
+[2]: 59731 consumed 1460 bytes
+[2]: 61191 tcp_segment_size 1460 
+[2]: 61191 >>> http: response body consumed 1460 bytes
+[2]: 61191 consumed 1460 bytes
+[2]: 62651 tcp_segment_size 1460 
+[2]: 62651 >>> http: response body consumed 1460 bytes
+[2]: 62651 consumed 1460 bytes
+[2]: 64111 tcp_segment_size 1460 
+[2]: 64111 >>> http: response body consumed 1460 bytes
+[2]: 64111 consumed 1460 bytes
+[2]: 65571 tcp_segment_size 1460 
+[2]: 65571 >>> http: response body consumed 1460 bytes
+[2]: 65571 consumed 1460 bytes
+[2]: 67031 tcp_segment_size 1460 
+[2]: 67031 >>> http: response body consumed 1460 bytes
+[2]: 67031 consumed 1460 bytes
+[2]: 68491 tcp_segment_size 1460 
+[2]: 68491 >>> http: response body consumed 1460 bytes
+[2]: 68491 consumed 1460 bytes
+[2]: 69951 tcp_segment_size 1460 
+[2]: 69951 >>> http: response body consumed 1460 bytes
+[2]: 69951 consumed 1460 bytes
+[2]: 71411 tcp_segment_size 1460 
+[2]: 71411 >>> http: response body consumed 1460 bytes
+[2]: 71411 consumed 1460 bytes
+[2]: 72871 tcp_segment_size 1460 
+[2]: 72871 >>> http: response body consumed 1460 bytes
+[2]: 72871 consumed 1460 bytes
+[2]: 74331 tcp_segment_size 1460 
+[2]: 74331 >>> http: response body consumed 1460 bytes
+[2]: 74331 consumed 1460 bytes
+[2]: 75791 tcp_segment_size 1460 
+[2]: 75791 >>> http: response body consumed 1460 bytes
+[2]: 75791 consumed 1460 bytes
+[2]: 77251 tcp_segment_size 1460 
+[2]: 77251 >>> http: response body consumed 1460 bytes
+[2]: 77251 consumed 1460 bytes
+[2]: 78711 tcp_segment_size 1460 
+[2]: 78711 >>> http: response body consumed 1460 bytes
+[2]: 78711 consumed 1460 bytes
+[2]: 80171 tcp_segment_size 1460 
+[2]: 80171 >>> http: response body consumed 1460 bytes
+[2]: 80171 consumed 1460 bytes
+[2]: 81631 tcp_segment_size 1460 
+[2]: 81631 >>> http: response body consumed 1460 bytes
+[2]: 81631 consumed 1460 bytes
+[2]: 83091 tcp_segment_size 1460 
+[2]: 83091 >>> http: response body consumed 1460 bytes
+[2]: 83091 consumed 1460 bytes
+[2]: 84551 tcp_segment_size 1460 
+[2]: 84551 >>> http: response body consumed 1460 bytes
+[2]: 84551 consumed 1460 bytes
+[2]: 86011 tcp_segment_size 1460 
+[2]: 86011 >>> http: response body consumed 1460 bytes
+[2]: 86011 consumed 1460 bytes
+[2]: 87471 tcp_segment_size 1460 
+[2]: 87471 >>> http: response body consumed 1460 bytes
+[2]: 87471 consumed 1460 bytes
+[2]: 88931 tcp_segment_size 1460 
+[2]: 88931 >>> http: response body consumed 1460 bytes
+[2]: 88931 consumed 1460 bytes
+[2]: 90391 tcp_segment_size 1460 
+[2]: 90391 >>> http: response body consumed 1460 bytes
+[2]: 90391 consumed 1460 bytes
+[2]: 91851 tcp_segment_size 1291 
+[2]: 91851 >>> http: response body complete 85684 bytes, reset http message 
+@-webkit-keyframes loader{0%{opacity:1}to{opacity:0}}@keyframes loader{0%{opacity:1}to{opacity:0}}@-
+
+[2]: 91851 consumed 1291 bytes
+[6]: 43802 tcp_segment_size 1460 
+[6]: 43802 >>> http: response body consumed 1460 bytes
+[6]: 43802 consumed 1460 bytes
+[6]: 45262 tcp_segment_size 1460 
+[6]: 45262 >>> http: response body consumed 1460 bytes
+[6]: 45262 consumed 1460 bytes
+[6]: 46722 tcp_segment_size 1460 
+[6]: 46722 >>> http: response body consumed 1460 bytes
+[6]: 46722 consumed 1460 bytes
+[6]: 48182 tcp_segment_size 1460 
+[6]: 48182 >>> http: response body consumed 1460 bytes
+[6]: 48182 consumed 1460 bytes
+[6]: 49642 tcp_segment_size 1460 
+[6]: 49642 >>> http: response body consumed 1460 bytes
+[6]: 49642 consumed 1460 bytes
+[6]: 51102 tcp_segment_size 1460 
+[6]: 51102 >>> http: response body consumed 1460 bytes
+[6]: 51102 consumed 1460 bytes
+[6]: 52562 tcp_segment_size 1460 
+[6]: 52562 >>> http: response body consumed 1460 bytes
+[6]: 52562 consumed 1460 bytes
+[6]: 54022 tcp_segment_size 1460 
+[6]: 54022 >>> http: response body consumed 1460 bytes
+[6]: 54022 consumed 1460 bytes
+[6]: 55482 tcp_segment_size 1460 
+[6]: 55482 >>> http: response body consumed 1460 bytes
+[6]: 55482 consumed 1460 bytes
+[6]: 56942 tcp_segment_size 1460 
+[6]: 56942 >>> http: response body consumed 1460 bytes
+[6]: 56942 consumed 1460 bytes
+[6]: 58402 tcp_segment_size 1460 
+[6]: 58402 >>> http: response body consumed 1460 bytes
+[6]: 58402 consumed 1460 bytes
+[6]: 59862 tcp_segment_size 1460 
+[6]: 59862 >>> http: response body consumed 1460 bytes
+[6]: 59862 consumed 1460 bytes
+[6]: 61322 tcp_segment_size 1460 
+[6]: 61322 >>> http: response body consumed 1460 bytes
+[6]: 61322 consumed 1460 bytes
+[6]: 62782 tcp_segment_size 1460 
+[6]: 62782 >>> http: response body consumed 1460 bytes
+[6]: 62782 consumed 1460 bytes
+[6]: 64242 tcp_segment_size 1460 
+[6]: 64242 >>> http: response body consumed 1460 bytes
+[6]: 64242 consumed 1460 bytes
+[6]: 65702 tcp_segment_size 1460 
+[6]: 65702 >>> http: response body consumed 1460 bytes
+[6]: 65702 consumed 1460 bytes
+[6]: 67162 tcp_segment_size 1460 
+[6]: 67162 >>> http: response body consumed 1460 bytes
+[6]: 67162 consumed 1460 bytes
+[6]: 68622 tcp_segment_size 1460 
+[6]: 68622 >>> http: response body consumed 1460 bytes
+[6]: 68622 consumed 1460 bytes
+[6]: 70082 tcp_segment_size 1460 
+[6]: 70082 >>> http: response body consumed 1460 bytes
+[6]: 70082 consumed 1460 bytes
+[6]: 71542 tcp_segment_size 1460 
+[6]: 71542 >>> http: response body consumed 1460 bytes
+[6]: 71542 consumed 1460 bytes
+[6]: 73002 tcp_segment_size 1460 
+[6]: 73002 >>> http: response body consumed 1460 bytes
+[6]: 73002 consumed 1460 bytes
+[6]: 74462 tcp_segment_size 1460 
+[6]: 74462 >>> http: response body consumed 1460 bytes
+[6]: 74462 consumed 1460 bytes
+[6]: 75922 tcp_segment_size 1460 
+[6]: 75922 >>> http: response body consumed 1460 bytes
+[6]: 75922 consumed 1460 bytes
+[6]: 77382 tcp_segment_size 1460 
+[6]: 77382 >>> http: response body consumed 1460 bytes
+[6]: 77382 consumed 1460 bytes
+[6]: 78842 tcp_segment_size 1460 
+[6]: 78842 >>> http: response body consumed 1460 bytes
+[6]: 78842 consumed 1460 bytes
+[6]: 80302 tcp_segment_size 1460 
+[6]: 80302 >>> http: response body consumed 1460 bytes
+[6]: 80302 consumed 1460 bytes
+[6]: 81762 tcp_segment_size 1460 
+[6]: 81762 >>> http: response body consumed 1460 bytes
+[6]: 81762 consumed 1460 bytes
+[6]: 83222 tcp_segment_size 1460 
+[6]: 83222 >>> http: response body consumed 1460 bytes
+[6]: 83222 consumed 1460 bytes
+[6]: 84682 tcp_segment_size 1460 
+[6]: 84682 >>> http: response body consumed 1460 bytes
+[6]: 84682 consumed 1460 bytes
+[6]: 86142 tcp_segment_size 1460 
+[6]: 86142 >>> http: response body consumed 1460 bytes
+[6]: 86142 consumed 1460 bytes
+[6]: 87602 tcp_segment_size 1460 
+[6]: 87602 >>> http: response body consumed 1460 bytes
+[6]: 87602 consumed 1460 bytes
+[6]: 89062 tcp_segment_size 1460 
+[6]: 89062 >>> http: response body consumed 1460 bytes
+[6]: 89062 consumed 1460 bytes
+[6]: 90522 tcp_segment_size 1460 
+[6]: 90522 >>> http: response body consumed 1460 bytes
+[6]: 90522 consumed 1460 bytes
+[6]: 91982 tcp_segment_size 1460 
+[6]: 91982 >>> http: response body consumed 1460 bytes
+[6]: 91982 consumed 1460 bytes
+[6]: 93442 tcp_segment_size 1460 
+[6]: 93442 >>> http: response body consumed 1460 bytes
+[6]: 93442 consumed 1460 bytes
+[6]: 94902 tcp_segment_size 1460 
+[6]: 94902 >>> http: response body consumed 1460 bytes
+[6]: 94902 consumed 1460 bytes
+[6]: 96362 tcp_segment_size 1460 
+[6]: 96362 >>> http: response body consumed 1460 bytes
+[6]: 96362 consumed 1460 bytes
+[6]: 97822 tcp_segment_size 1460 
+[6]: 97822 >>> http: response body consumed 1460 bytes
+[6]: 97822 consumed 1460 bytes
+[6]: 99282 tcp_segment_size 1460 
+[6]: 99282 >>> http: response body consumed 1460 bytes
+[6]: 99282 consumed 1460 bytes
+[6]: 100742 tcp_segment_size 1460 
+[6]: 100742 >>> http: response body consumed 1460 bytes
+[6]: 100742 consumed 1460 bytes
+[6]: 102202 tcp_segment_size 1460 
+[6]: 102202 >>> http: response body consumed 1460 bytes
+[6]: 102202 consumed 1460 bytes
+[6]: 103662 tcp_segment_size 1460 
+[6]: 103662 >>> http: response body consumed 1460 bytes
+[6]: 103662 consumed 1460 bytes
+[6]: 105122 tcp_segment_size 1460 
+[6]: 105122 >>> http: response body consumed 1460 bytes
+[6]: 105122 consumed 1460 bytes
+[6]: 106582 tcp_segment_size 1460 
+[6]: 106582 >>> http: response body consumed 1460 bytes
+[6]: 106582 consumed 1460 bytes
+[6]: 108042 tcp_segment_size 1460 
+[6]: 108042 >>> http: response body consumed 1460 bytes
+[6]: 108042 consumed 1460 bytes
+[6]: 109502 tcp_segment_size 1460 
+[6]: 109502 >>> http: response body consumed 1460 bytes
+[6]: 109502 consumed 1460 bytes
+[6]: 110962 tcp_segment_size 1460 
+[6]: 110962 >>> http: response body consumed 1460 bytes
+[6]: 110962 consumed 1460 bytes
+[6]: 112422 tcp_segment_size 1460 
+[6]: 112422 >>> http: response body consumed 1460 bytes
+[6]: 112422 consumed 1460 bytes
+[6]: 113882 tcp_segment_size 1460 
+[6]: 113882 >>> http: response body consumed 1460 bytes
+[6]: 113882 consumed 1460 bytes
+[6]: 115342 tcp_segment_size 924 
+[6]: 115342 >>> http: response body complete 115990 bytes, reset http message 
+[89, 50, 4E, 47, D, A, 1A, A, 0, 0, 0, D, 49, 48, 44, 52, 0, 0, 6, F9, 0, 0, 4, 4B, 8, 2, 0, 0, 0, 2
+
+[6]: 115342 consumed 924 bytes
+[5]: 445 tcp_segment_size 443 
+[5]: 445 >>> http: request GET /img3.png
+[5]: 445 >>> http: request headers 443 bytes [("Host", "192.168.56.101:3000"), ("Connection", "keep-alive"), ("Pragma", "no-cache"), ("Cache-Control", "no-cache"), ("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"), ("Accept", "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8"), ("Sec-GPC", "1"), ("Referer", "http://192.168.56.101:3000/"), ("Accept-Encoding", "gzip, deflate"), ("Accept-Language", "en-US,en;q=0.9,de;q=0.8")]
+[5]: 445 >>> http: request complete, no body, reset http message
+[5]: 445 consumed 443 bytes
+[1]: 858 tcp_segment_size 465 
+[1]: 858 >>> http: request GET /svg/binary-desktop.svg
+[1]: 858 >>> http: request headers 465 bytes [("Host", "192.168.56.101:3000"), ("Connection", "keep-alive"), ("Pragma", "no-cache"), ("Cache-Control", "no-cache"), ("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"), ("Accept", "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8"), ("Sec-GPC", "1"), ("Referer", "http://192.168.56.101:3000/main.css"), ("Accept-Encoding", "gzip, deflate"), ("Accept-Language", "en-US,en;q=0.9,de;q=0.8")]
+[1]: 858 >>> http: request complete, no body, reset http message
+[1]: 858 consumed 465 bytes
+[6]: 116266 tcp_segment_size 1460 
+[6]: 116266 >>> http: response 200 OK
+[6]: 116266 >>> http: response headers 273 bytes [("Content-Length", "47913"), ("Content-Disposition", "inline; filename=\"img3.png\""), ("Accept-Ranges", "bytes"), ("ETag", "\"c220979c4a6c5e76a6efaeda2b497cdc06602bbb\""), ("Content-Type", "image/png"), ("Date", "Mon, 15 Jul 2024 13:41:06 GMT"), ("Connection", "keep-alive"), ("Keep-Alive", "timeout=5")]
+[6]: 116266 >>> http: response body consumed 1187 bytes
+[6]: 116266 consumed 1460 bytes
+[6]: 117726 tcp_segment_size 1460 
+[6]: 117726 >>> http: response body consumed 1460 bytes
+[6]: 117726 consumed 1460 bytes
+[6]: 119186 tcp_segment_size 1460 
+[6]: 119186 >>> http: response body consumed 1460 bytes
+[6]: 119186 consumed 1460 bytes
+[6]: 120646 tcp_segment_size 1460 
+[6]: 120646 >>> http: response body consumed 1460 bytes
+[6]: 120646 consumed 1460 bytes
+[6]: 122106 tcp_segment_size 1460 
+[6]: 122106 >>> http: response body consumed 1460 bytes
+[6]: 122106 consumed 1460 bytes
+[6]: 123566 tcp_segment_size 1460 
+[6]: 123566 >>> http: response body consumed 1460 bytes
+[6]: 123566 consumed 1460 bytes
+[6]: 125026 tcp_segment_size 1460 
+[6]: 125026 >>> http: response body consumed 1460 bytes
+[6]: 125026 consumed 1460 bytes
+[6]: 126486 tcp_segment_size 1460 
+[6]: 126486 >>> http: response body consumed 1460 bytes
+[6]: 126486 consumed 1460 bytes
+[6]: 127946 tcp_segment_size 1460 
+[6]: 127946 >>> http: response body consumed 1460 bytes
+[6]: 127946 consumed 1460 bytes
+[6]: 129406 tcp_segment_size 1460 
+[6]: 129406 >>> http: response body consumed 1460 bytes
+[6]: 129406 consumed 1460 bytes
+[6]: 130866 tcp_segment_size 1460 
+[6]: 130866 >>> http: response body consumed 1460 bytes
+[6]: 130866 consumed 1460 bytes
+[6]: 132326 tcp_segment_size 1460 
+[6]: 132326 >>> http: response body consumed 1460 bytes
+[6]: 132326 consumed 1460 bytes
+[6]: 133786 tcp_segment_size 1460 
+[6]: 133786 >>> http: response body consumed 1460 bytes
+[6]: 133786 consumed 1460 bytes
+[6]: 135246 tcp_segment_size 1460 
+[6]: 135246 >>> http: response body consumed 1460 bytes
+[6]: 135246 consumed 1460 bytes
+[6]: 136706 tcp_segment_size 1460 
+[6]: 136706 >>> http: response body consumed 1460 bytes
+[6]: 136706 consumed 1460 bytes
+[6]: 138166 tcp_segment_size 1460 
+[6]: 138166 >>> http: response body consumed 1460 bytes
+[6]: 138166 consumed 1460 bytes
+[6]: 139626 tcp_segment_size 1460 
+[6]: 139626 >>> http: response body consumed 1460 bytes
+[6]: 139626 consumed 1460 bytes
+[6]: 141086 tcp_segment_size 1460 
+[6]: 141086 >>> http: response body consumed 1460 bytes
+[6]: 141086 consumed 1460 bytes
+[6]: 142546 tcp_segment_size 1460 
+[6]: 142546 >>> http: response body consumed 1460 bytes
+[6]: 142546 consumed 1460 bytes
+[6]: 144006 tcp_segment_size 1460 
+[6]: 144006 >>> http: response body consumed 1460 bytes
+[6]: 144006 consumed 1460 bytes
+[6]: 145466 tcp_segment_size 1460 
+[6]: 145466 >>> http: response body consumed 1460 bytes
+[6]: 145466 consumed 1460 bytes
+[6]: 146926 tcp_segment_size 1460 
+[6]: 146926 >>> http: response body consumed 1460 bytes
+[6]: 146926 consumed 1460 bytes
+[6]: 148386 tcp_segment_size 1460 
+[6]: 148386 >>> http: response body consumed 1460 bytes
+[6]: 148386 consumed 1460 bytes
+[6]: 149846 tcp_segment_size 1460 
+[6]: 149846 >>> http: response body consumed 1460 bytes
+[6]: 149846 consumed 1460 bytes
+[6]: 151306 tcp_segment_size 1460 
+[6]: 151306 >>> http: response body consumed 1460 bytes
+[6]: 151306 consumed 1460 bytes
+[6]: 152766 tcp_segment_size 1460 
+[6]: 152766 >>> http: response body consumed 1460 bytes
+[6]: 152766 consumed 1460 bytes
+[6]: 154226 tcp_segment_size 1460 
+[6]: 154226 >>> http: response body consumed 1460 bytes
+[6]: 154226 consumed 1460 bytes
+[6]: 155686 tcp_segment_size 1460 
+[6]: 155686 >>> http: response body consumed 1460 bytes
+[6]: 155686 consumed 1460 bytes
+[6]: 157146 tcp_segment_size 1460 
+[6]: 157146 >>> http: response body consumed 1460 bytes
+[6]: 157146 consumed 1460 bytes
+[6]: 158606 tcp_segment_size 1460 
+[6]: 158606 >>> http: response body consumed 1460 bytes
+[6]: 158606 consumed 1460 bytes
+[6]: 160066 tcp_segment_size 1460 
+[6]: 160066 >>> http: response body consumed 1460 bytes
+[6]: 160066 consumed 1460 bytes
+[6]: 161526 tcp_segment_size 1460 
+[6]: 161526 >>> http: response body consumed 1460 bytes
+[6]: 161526 consumed 1460 bytes
+[6]: 162986 tcp_segment_size 1460 
+[6]: 162986 >>> http: response body consumed 1460 bytes
+[6]: 162986 consumed 1460 bytes
+[6]: 164446 tcp_segment_size 6 
+[6]: 164446 >>> http: response body complete 47913 bytes, reset http message 
+[89, 50, 4E, 47, D, A, 1A, A, 0, 0, 0, D, 49, 48, 44, 52, 0, 0, 9, 60, 0, 0, 4, B0, 8, 2, 0, 0, 0, F
+
+[6]: 164446 consumed 6 bytes
+[2]: 93142 tcp_segment_size 1460 
+[2]: 93142 >>> http: response 404 Not Found
+[2]: 93142 >>> http: response headers 178 bytes [("Content-Type", "text/html; charset=utf-8"), ("Date", "Mon, 15 Jul 2024 13:41:06 GMT"), ("Connection", "keep-alive"), ("Keep-Alive", "timeout=5"), ("Transfer-Encoding", "chunked")]
+[2]: 93142 >>> http: response body consumed 1282 bytes
+[2]: 93142 consumed 1460 bytes
+[2]: 94602 tcp_segment_size 371 
+[2]: 94602 >>> http: response body complete 1641 bytes, reset http message 
+<!DOCTYPE html><head> <meta name="viewport" content="width=device-width, initial-scale=1, user-scala
+
+[2]: 94602 consumed 371 bytes
