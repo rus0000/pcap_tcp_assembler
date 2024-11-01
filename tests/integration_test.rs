@@ -21,7 +21,7 @@ fn generate_headers_buffers(sequence_number: u32, tcp_payload: &[u8]) -> (Vec<u8
     tcp_header_buf.extend_from_slice(&tcp_payload);
 
     let mut ipv4_header_buf = BufWriter::new(Vec::new());
-    let ipv4_header = Ipv4Header::new(tcp_header_buf.len() as u16, 64, IpNumber::Tcp as u8, [192, 168, 1, 1], [192, 168, 1, 2]);
+    let ipv4_header = Ipv4Header::new(tcp_header_buf.len() as u16, 64, IpNumber::TCP, [192, 168, 1, 1], [192, 168, 1, 2]).unwrap();
     ipv4_header.write(&mut ipv4_header_buf).unwrap();
     let ipv4_header_buf = ipv4_header_buf.into_inner().unwrap();
 
@@ -753,7 +753,7 @@ fn test_flags_rst() {
     let tcp_header_slice1 = TcpHeaderSlice::from_slice(&tcp_header_buf1).unwrap();
 
     let mut ipv4_header_buf1 = BufWriter::new(Vec::new());
-    let ipv4_header1 = Ipv4Header::new(tcp_header_buf1.len() as u16, 64, IpNumber::Tcp as u8, [192, 168, 1, 1], [192, 168, 1, 2]);
+    let ipv4_header1 = Ipv4Header::new(tcp_header_buf1.len() as u16, 64, IpNumber::TCP, [192, 168, 1, 1], [192, 168, 1, 2]).unwrap();
     ipv4_header1.write(&mut ipv4_header_buf1).unwrap();
     let ipv4_header_buf1 = ipv4_header_buf1.into_inner().unwrap();
     let ipv4_header_slice1 = Ipv4HeaderSlice::from_slice(&ipv4_header_buf1).unwrap();
@@ -786,7 +786,7 @@ fn test_flags_rst() {
     let tcp_header_slice2 = TcpHeaderSlice::from_slice(&tcp_header_buf2).unwrap();
 
     let mut ipv4_header_buf2 = BufWriter::new(Vec::new());
-    let ipv4_header2 = Ipv4Header::new(tcp_header_buf2.len() as u16, 64, IpNumber::Tcp as u8, [192, 168, 1, 2], [192, 168, 1, 1]);
+    let ipv4_header2 = Ipv4Header::new(tcp_header_buf2.len() as u16, 64, IpNumber::TCP, [192, 168, 1, 2], [192, 168, 1, 1]).unwrap();
     ipv4_header2.write(&mut ipv4_header_buf2).unwrap();
     let ipv4_header_buf2 = ipv4_header_buf2.into_inner().unwrap();
     let ipv4_header_slice2 = Ipv4HeaderSlice::from_slice(&ipv4_header_buf2).unwrap();
@@ -882,7 +882,7 @@ fn test_flags_syn() {
     let tcp_header_slice1 = TcpHeaderSlice::from_slice(&tcp_header_buf1).unwrap();
 
     let mut ipv4_header_buf1 = BufWriter::new(Vec::new());
-    let ipv4_header1 = Ipv4Header::new(tcp_header_buf1.len() as u16, 64, IpNumber::Tcp as u8, [192, 168, 1, 1], [192, 168, 1, 2]);
+    let ipv4_header1 = Ipv4Header::new(tcp_header_buf1.len() as u16, 64, IpNumber::TCP, [192, 168, 1, 1], [192, 168, 1, 2]).unwrap();
     ipv4_header1.write(&mut ipv4_header_buf1).unwrap();
     let ipv4_header_buf1 = ipv4_header_buf1.into_inner().unwrap();
     let ipv4_header_slice1 = Ipv4HeaderSlice::from_slice(&ipv4_header_buf1).unwrap();
@@ -915,7 +915,7 @@ fn test_flags_syn() {
     let tcp_header_slice2 = TcpHeaderSlice::from_slice(&tcp_header_buf2).unwrap();
 
     let mut ipv4_header_buf2 = BufWriter::new(Vec::new());
-    let ipv4_header2 = Ipv4Header::new(tcp_header_buf2.len() as u16, 64, IpNumber::Tcp as u8, [192, 168, 1, 2], [192, 168, 1, 1]);
+    let ipv4_header2 = Ipv4Header::new(tcp_header_buf2.len() as u16, 64, IpNumber::TCP, [192, 168, 1, 2], [192, 168, 1, 1]).unwrap();
     ipv4_header2.write(&mut ipv4_header_buf2).unwrap();
     let ipv4_header_buf2 = ipv4_header_buf2.into_inner().unwrap();
     let ipv4_header_slice2 = Ipv4HeaderSlice::from_slice(&ipv4_header_buf2).unwrap();
@@ -1011,7 +1011,7 @@ fn test_flags_fin() {
     let tcp_header_slice1 = TcpHeaderSlice::from_slice(&tcp_header_buf1).unwrap();
 
     let mut ipv4_header_buf1 = BufWriter::new(Vec::new());
-    let ipv4_header1 = Ipv4Header::new(tcp_header_buf1.len() as u16, 64, IpNumber::Tcp as u8, [192, 168, 1, 1], [192, 168, 1, 2]);
+    let ipv4_header1 = Ipv4Header::new(tcp_header_buf1.len() as u16, 64, IpNumber::TCP, [192, 168, 1, 1], [192, 168, 1, 2]).unwrap();
     ipv4_header1.write(&mut ipv4_header_buf1).unwrap();
     let ipv4_header_buf1 = ipv4_header_buf1.into_inner().unwrap();
     let ipv4_header_slice1 = Ipv4HeaderSlice::from_slice(&ipv4_header_buf1).unwrap();
@@ -1044,7 +1044,7 @@ fn test_flags_fin() {
     let tcp_header_slice2 = TcpHeaderSlice::from_slice(&tcp_header_buf2).unwrap();
 
     let mut ipv4_header_buf2 = BufWriter::new(Vec::new());
-    let ipv4_header2 = Ipv4Header::new(tcp_header_buf2.len() as u16, 64, IpNumber::Tcp as u8, [192, 168, 1, 2], [192, 168, 1, 1]);
+    let ipv4_header2 = Ipv4Header::new(tcp_header_buf2.len() as u16, 64, IpNumber::TCP, [192, 168, 1, 2], [192, 168, 1, 1]).unwrap();
     ipv4_header2.write(&mut ipv4_header_buf2).unwrap();
     let ipv4_header_buf2 = ipv4_header_buf2.into_inner().unwrap();
     let ipv4_header_slice2 = Ipv4HeaderSlice::from_slice(&ipv4_header_buf2).unwrap();

@@ -44,7 +44,7 @@ fn parse_packet<'a>(captured_packet: &'a CapturedPacket<'a>) -> Option<(Ipv4Head
         eprintln!("Cannot parse IPv4 header");
         return None;
     };
-    if ipv4_header_slice.protocol() != IpNumber::Tcp as u8 {
+    if ipv4_header_slice.protocol() != IpNumber::TCP {
         return None;
     }
     let ipv4_header_size = ipv4_header_slice.slice().len();

@@ -176,11 +176,10 @@ impl<'a> PcapTcpAssembler<'a> {
             /* trace */ Option<&str>,
         ),
     ) {
-        // TODO: Adapt to etherparse 0.15.0
-        // let Ok(ip_payload_len) = ipv4_header_slice.payload_len() else {
-        //     return;
-        // };
-        let tcp_segment_size: u32 = ipv4_header_slice.payload_len() as u32 - tcp_header_slice.data_offset() as u32 * 4;
+        let Ok(ip_payload_len) = ipv4_header_slice.payload_len() else {
+            return;
+        };
+        let tcp_segment_size: u32 = ip_payload_len as u32 - tcp_header_slice.data_offset() as u32 * 4;
         let with_payload =
             tcp_segment_size > 0 && (tcp_payload.len() as u32) >= tcp_segment_size && !tcp_header_slice.syn() && !tcp_header_slice.rst();
 
