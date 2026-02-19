@@ -47,17 +47,11 @@ impl fmt::Display for Contig {
 
 impl Contig {
     fn empty() -> Contig {
-        Contig {
-            hole_size: 0,
-            data_size: 0,
-        }
+        Contig { hole_size: 0, data_size: 0 }
     }
 
     fn hole_and_data(hole_size: usize, data_size: usize) -> Contig {
-        Contig {
-            hole_size,
-            data_size,
-        }
+        Contig { hole_size, data_size }
     }
 
     fn has_hole(&self) -> bool {
@@ -84,7 +78,7 @@ impl Contig {
 
     /// Set hole_size, increase data_size
     /// * `size` - new hole_size, must be less or equal to the current hole_size
-    fn shrink_hole_to(&mut self, size: usize) -> usize{
+    fn shrink_hole_to(&mut self, size: usize) -> usize {
         assert!(self.hole_size >= size);
         let difference = self.hole_size - size;
 
@@ -103,7 +97,7 @@ impl Contig {
 ///
 #[derive(Debug, PartialEq, Eq, Clone)]
 pub struct Assembler {
-    pub contigs: Vec::<Contig>,
+    pub contigs: Vec<Contig>,
 }
 
 impl fmt::Display for Assembler {
@@ -128,7 +122,7 @@ impl Assembler {
     /// Create a new buffer assembler.
     pub fn new(assembler_max_lost_segment_count: usize) -> Assembler {
         Assembler {
-            contigs: vec![Contig::empty(); assembler_max_lost_segment_count]
+            contigs: vec![Contig::empty(); assembler_max_lost_segment_count],
         }
     }
 
@@ -227,11 +221,7 @@ impl Assembler {
     /// except it's guaranteed to not fail when offset = 0.
     /// This is required for TCP: we must never drop the next expected segment, or
     /// the protocol might get stuck.
-    pub fn insert_then_remove_contiguous_data_from_head(
-        &mut self,
-        offset: usize,
-        size: usize,
-    ) -> Result<usize, AssemblerError> {
+    pub fn insert_then_remove_contiguous_data_from_head(&mut self, offset: usize, size: usize) -> Result<usize, AssemblerError> {
         // This is the only case where a segment at offset=0 would cause the
         // total amount of contigs to rise (and therefore can potentially cause
         // a AssemblerError::TooManyHolesError). Handle it in a way that is guaranteed to succeed.
@@ -463,12 +453,12 @@ impl Assembler {
                 }
 
                 return Ok(());
-            } else  {
+            } else {
                 // Cannot store more data.
                 if self.is_last_contig(contig_index) {
                     return Err(AssemblerError::RuntimeError);
                 }
-                let new_contig = self.insert_contig_at_index(contig_index +1)?;
+                let new_contig = self.insert_contig_at_index(contig_index + 1)?;
                 new_contig.hole_size = remove_data_size;
                 new_contig.data_size = right_data_size;
 
@@ -481,10 +471,7 @@ impl Assembler {
 
     /// Truncate Assembler at head
     /// Account hole_size and data_size
-    pub fn remove_data_at_head(
-        &mut self,
-        remove_data_size: usize,
-    ) -> Result<(), AssemblerError> {
+    pub fn remove_data_at_head(&mut self, remove_data_size: usize) -> Result<(), AssemblerError> {
         if remove_data_size == 0 {
             return Ok(());
         }
@@ -507,10 +494,7 @@ impl Assembler {
         }
         self.decrease_leading_hole(data_offset_in_contig + 1)
     }
-    pub fn decrease_leading_hole(
-        &mut self,
-        bytes_to_remove_from_hole: usize,
-    ) -> Result<(), AssemblerError> {
+    pub fn decrease_leading_hole(&mut self, bytes_to_remove_from_hole: usize) -> Result<(), AssemblerError> {
         if bytes_to_remove_from_hole == 0 {
             return Ok(());
         }
@@ -525,18 +509,12 @@ impl Assembler {
         return Ok(());
     }
 
-    pub fn get_contig_hole_and_data(
-        &self,
-        contig_id: usize,
-    ) -> (usize, usize) {
+    pub fn get_contig_hole_and_data(&self, contig_id: usize) -> (usize, usize) {
         (self.contigs[contig_id].hole_size, self.contigs[contig_id].data_size)
     }
 
     /// Return contig data offset and data_size
-    pub fn get_contig_data(
-        &self,
-        contig_id: usize,
-    ) -> (usize, usize) {
+    pub fn get_contig_data(&self, contig_id: usize) -> (usize, usize) {
         let mut offset = 0;
         let mut size = 0;
         for i in 0..self.contigs.len() - 1 {
@@ -544,7 +522,7 @@ impl Assembler {
                 offset += self.contigs[i].hole_size;
                 size = self.contigs[i].data_size;
 
-                return (offset, size)
+                return (offset, size);
             } else {
                 offset += self.contigs[i].get_total_size();
             }
@@ -562,7 +540,7 @@ impl Assembler {
     /// |--- 100 ---|--- 200 ---|--- 100 ---|
     ///
     /// An offset of 1500 would return the ranges: ``(1500, 1600), (1800, 1900)``
-    pub fn iter_data(&self, first_offset: usize) -> AssemblerIter {
+    pub fn iter_data(&self, first_offset: usize) -> AssemblerIter<'_> {
         AssemblerIter::new(self, first_offset)
     }
 }
@@ -621,10 +599,7 @@ mod test {
 
             let mut contigs = vec![empty_contig; ASSEMBLER_MAX_LOST_SEGMENT_COUNT];
             for (i, &(hole_size, data_size)) in vec.iter().enumerate() {
-                contigs[i] = Contig {
-                    hole_size,
-                    data_size,
-                };
+                contigs[i] = Contig { hole_size, data_size };
             }
             Assembler { contigs }
         }
@@ -1467,7 +1442,10 @@ mod test {
         }
         // Maximum of allowed holes is reached
         let assr_before = assr.clone();
-        assert_eq!(assr.insert_then_remove_contiguous_data_from_head(1, 3), Err(AssemblerError::TooManyHolesError));
+        assert_eq!(
+            assr.insert_then_remove_contiguous_data_from_head(1, 3),
+            Err(AssemblerError::TooManyHolesError)
+        );
         assert_eq!(assr_before, assr);
     }
 
@@ -1475,7 +1453,7 @@ mod test {
     fn test_add_then_remove_front_at_front_full_offset_0() {
         let mut assr = Assembler::new(ASSEMBLER_MAX_LOST_SEGMENT_COUNT);
         for c in 1..=ASSEMBLER_MAX_LOST_SEGMENT_COUNT {
-            assert_eq!(assr.insert_data_absolute(c * 10, 3), Ok(c -1));
+            assert_eq!(assr.insert_data_absolute(c * 10, 3), Ok(c - 1));
         }
         assert_eq!(assr.insert_then_remove_contiguous_data_from_head(0, 3), Ok(3));
     }

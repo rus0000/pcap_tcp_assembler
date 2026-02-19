@@ -11,8 +11,8 @@ readme = "README.md"
 exclude = [".*", "rustfmt.toml"]
 
 [dependencies]
-etherparse = "0.16.0"
-indexmap = "2.6.0"
+etherparse = "0.19.0"
+indexmap = "2.13.0"
 
 [dev-dependencies]
 httparse = "1.9.5"

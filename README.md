@@ -1,5 +1,6 @@
 # PCAP TCP Assembler
 - TCP segments re-assembly and application message detection optimized for PCAP processing.
+- This is **not** a TCP communication stack.
 
 # Use-case
 - PCAP TCP Assembler is intended for **log analysis of message exchange**, when message loss could be tolerated during analysis.
@@ -26,7 +27,12 @@ PCAP TCP Assembler solves two tasks, which must be solved, when consuming TCP by
 - PCAP TCP Assembler uses TCP receive buffer for this task, so Application does not need to implement this logic and does not need to allocate more buffers for this task.
 - Application, which consumes TCP payload from PCAP, provides a callback to detect a beginning of application message in the TCP byte-stream.
 
+# Features
+- TCP connection [incarnations](https://datatracker.ietf.org/doc/html/rfc9293) detection
+- Sequence number rotation
+
 # Description
+- Capture analysis mental model. Packets in a PCAP file, is what was **sent** and captured. Not was was **received**.
 - TCP connection - one direction of data flow: [source IP:port, destination IP:port].
 - TCP session - two TCP connections.
 - TCP stream - a byte-stream of TCP payload. 
@@ -111,6 +117,3 @@ https://github.com/xd009642/tarpaulin
 # License
 - Copyright (c) 2024 Ruslan Iusupov <https://github.com/rus0000>
 - SPDX-License-Identifier: MIT
-- smoltcp TCP Assembler part is 0BSD
-- Copyright (c) 2016 whitequark@whitequark.org
-- SPDX-License-Identifier: 0BSD
